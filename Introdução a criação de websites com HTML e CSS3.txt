@@ -107,7 +107,7 @@ Uma regra do CSS é formada por um seletor ou um grupo de seletores, que são ap
 Dentro de um par de chaves {} temos as declarações. Uma declaração é formada por uma propriedade e um valor.
 
 
-------------ID x Classe----------
+---------------------------------ID x Classe--------------------------------------------------------
 
 <header id="header" class="header"></header>
 
@@ -126,3 +126,184 @@ Ex: .header {
 Um id só pode ser usado UMA VEZ na página!
 
 <link rel="stylesheet"> = O atributo rel vem de relationship serve para você dizer qual o relacionamento do arquivo que você quer utilizar com o arquivo atual. Quando você coloca rel="stylesheet" , você está dizendo que o arquivo importado é o arquivo responsável pelo estilo da sua página.
+
+Quando estamos fazendo o layout de um site, o navegador representa cada elemento HTML com uma caixa retangular, e chamamos isso de box model.
+Com o CSS conseguimos alterar a aparência dessa caixa.
+
+O Box model tem 4 áreas:
+
+- Margin = são espaçamentos entre os elementos
+
+- Border = fica em volta do padding e do content e a gente consegue alterar a aparência delas como largura e cor.
+
+- Padding = o espaçamento entre a borda e o conteúdo. É possível fazer bordas com dimensões diferentes, por exemplo: 
+
+post {
+    padding: 10px 5px;
+}
+Nesse caso o primeiro valor são para as partes superior e inferior (eixo Y), enquando o segundo para os lados esquerdo e direito (eixo X).
+
+Outro exemplo:
+
+post {
+    padding: 15px 10px 5px 0;
+}
+
+Neste exemplo temos um valor para cada lado: Topo, Direito, Inferior e Esquerdo respectivamente.
+
+
+- Content = é o que o seu bloco representa: um texto, uma imagem, um vídeo...
+
+___________________________
+| margin                   |
+| ________________________ |
+| | border                ||
+| | _____________________ ||
+| | |    padding         |||
+| | |    _____________   |||
+| | |    | content   |   |||
+| | |    |___________|   |||
+| | |____________________|||
+| |_______________________||
+|__________________________|
+
+--------------------------------------------Background-------------------------------------------------------
+
+A propriedade Background também é um atalho para várias outras propriedades, podemons mudar a caord do fundo, colocar uma imagem, alterar posicionamento dessa imagem...
+
+Ex: Mudando a cor de fundo
+
+.post {
+    background-color: green; ou background-color: #008800; ou background: #008000,
+    background-img: url(bg.png);
+    background-position: top;
+}
+
+
+- Border
+Largura: pixels, centímetros, milímetros...
+Cor: blue, #0000ff
+Estilo: sólida, pontilhada, tracejada...
+
+Ex:
+
+.post {
+    border-top: 2px dotted green;
+    border-right: 4px dashed pink;
+    border-bottom: 1px solid purple;
+    border-left: 4px dotted cyan;
+}
+
+É possível usar as propriedades da borda separadamente:
+Ex: 
+.post {
+    border: 3px solid #505050
+}
+            OU 
+
+.post {
+    border-width: 3px;
+    border-color: #505050;
+    border-style:  solid;
+}
+ 
+Border-radius: O raio da borda, quanto maior o número, permite arredondar as bordas.
+
+border-radius: 10px; (com um valor alteramos todos os cantos de um elemento)
+border-radius: 50%; (um elemento quadrado com border radius 50% vira um círculo)
+border-radius: 10% 20%; (topo e inferior, direita e esquerda)
+border-radius: 10% 20% 15% 22%; (topo, direita, inferior, esquerda)
+
+
+-------------------------------Estilizando Textos-----------------------------------------------------
+
+É recomendável usar web safe fonts, ou seja, fontes que estão presentes na maioria dos dispositivos.
+
+- font-family = altera a fonte da fonte do texto
+Ex1:
+#title {
+    font-family: Verdana;
+}
+
+Ex2:
+.post-title { 
+    font-family: Verdana, Arial;
+}
+
+No exemplo 2, há duas fontes no caso a primeira fonte não funcione, a segunda entra como backup.
+
+- font-size: altera o tamanho da fonte do texto
+Ex1:
+#title { 
+    font-size: 30px;
+}
+
+Ex2:
+.post_title {
+    font-size: 18px;
+}
+
+- font-style: altera o estilo da fonte do texto
+Ex1:
+#title {
+    font-style: normal;
+}
+
+Ex2:
+.subtitle {
+    font-style: italic;
+}
+
+- font-weight: altera o peso da fonte do texto
+Ex1:
+#title { 
+    font-wight: normal;
+}
+
+Ex2:
+.subtitle { 
+    font-weight: bold;
+}
+
+- text-transform: alterna o texto entre maiúsculas e minúsculas.
+Ex:
+#title {
+    text-transform: uppercase; = transforma todo o texto em caixa alta.
+}
+
+.subtitle { 
+    text-transform: lowercase; = transforma todo o texto em caixa baixa.
+}
+
+.post_title { 
+    text-transform: capitalize; = coloca todas as primeiras letras de cada palavra em maiúsculas.
+}
+
+- text-decoration: usado para dar destaque ao texto, pois ele coloca linhas
+Ex: 
+#text {
+    text-decoration: underline; = coloca uma linha abaixo abaixo das palavras.
+}
+
+.subtitle {
+    text-decoration: overline; = coloca uma linha acima das palavras.
+}
+
+.post_title {
+    text-decoration: line-through; = coloca uma linha no centro, cortando essas palavras.
+}
+
+----------------------------------Dimensão e Alinhamento------------------------------------------
+
+Dimensão e Alinhamento são coisas muito importantes para trabalhar com nossos layouts e para trabalhar com isso nós temos algumas propriedades:
+
+Width: Serve pra ajustar largura (pode ser usado em px ou %) 100% sempre vai respeitar o elemento que está de fora.
+Height: Serve pra ajustar altura (pode ser usado em px ou %)
+
+Max-width: A largura máxima que o elemento pode ter. (pode ser usado em px ou %)
+Max-height: A altura máxima que o elemento pode ter. (pode ser usado em px ou %)
+
+Margin: serve para colocar espaçamento entre elementos mas possui a opção "auto", no qual o browser calcula a margem.
+
+Text Align: Serve para alinhar o texto (a direita com o valor "right", esquerda com "left", centro com "center" e justificar o texto com "justify")
+
