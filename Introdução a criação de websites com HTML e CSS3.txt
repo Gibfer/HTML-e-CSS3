@@ -1,0 +1,128 @@
+
+-----------------------------------------Introdução a HTML--------------------------------------------------------------
+1. História e estrutura básica
+2. Semântica
+3. Principais elementos HTML
+
+1. História e Estrutura Básica
+
+1.1. História:
+
+HTML foi criador em 1991, por Tim Berners-Lee, desde então surgiram outras versões:
+HTML 2 - 1995
+HTML 3 - 1997
+HTML 4 - 1997
+HTML 5 - 2014
+
+1.2. Estrutura Básica:
+
+<!DOCTYPE html> = não é um elemento do HTML, mas diz ao navegador que ele está lidando com um arquivo do tipo HTML5.
+
+<html> = A tag html é a raiz do seu documento, todos os elementos HTML devem estar dentro dela. E nela nós informamos ao navegador qual é o idioma desse nosso documento, através do atributo lang, para o português brasileiro usamos pt-BR.
+
+<head> = A tag head contém elementos que serão lidos pelo navegador, como os metadados - um exemplo é o charset, que é a codificação de caracteres e a mais comum é a UTF-8, o JavaScript com a tag script, o CSS através das tags style e link - veremos a diferença quando falarmos sobre CSS - e o título da página com a tag title.
+
+<meta> = Define metadados, ou seja, informações sobre dados de um documento HTML. As meta tags vão dentro do elemento head e são usadas para especificar o conjunto de caracteres, o autor do documento, as configurações da janela de visualização etc.
+
+<title></title> = Define o título do documento, mostrado na barra de título de um navegador ou na aba da página. Pode conter somente texto e quaisquer marcações contidas no texto não são interpretadas.
+
+</head> = fecha o elemento head
+
+<body> = o "corpo", onde vai estar o conteúdo da nossa página, o que o usuário irá ver e interagir
+
+</body> = fecha o elemento body
+
+</html> = fecha o elemento HTML
+
+2. Semântica
+
+Durante muitos anos o elemento padrão no HTML era a div, construíamos nosso conteúdo todo baseado nela, e assim nascia a sopa de divs, uma confusão em meio a muitos elementos e era necessário usar classes para dar significados aos elementos.
+Mas em 2014 saiu a quinta versão do HTML, e com ela vieram vários mudanças importantes, como performance e acessibilidade, mas nesse curso introdutório vamos focar na semântica.
+A semântica nos permite descrever mais precisamente o nosso conteúdo, agora um bloco de texto não é apenas uma div, agora é um article e tem mais significado assim. E temos vários elementos para ressignificar as divs:
+
+<section> = Representa uma seção genérica de conteúdo quando não houver um elemento mais específico para isso.
+
+<header> = É o cabeçalho da página ou de uma seção da página e normalmente contém logotipos, menus, campos de busca.
+
+<article> = Representa um conteúdo independente e de maior relevância dentro de uma página, como um post de blog, uma notícia em uma barra lateral ou um bloco de comentários. Um article pode conter outros elementos, como header, cabeçalhos, parágrafos e imagens.
+
+<aside> = É uma seção que engloba conteúdos relacionados ao conteúdo principal, como artigos relacionados, biografia do autor e publicidade. Normalmente são representadas como barras laterais.
+
+<footer> = Esse elemento representa o rodapé do conteúdo ou de parte dele, pois ele é aceito dentro de vários elementos, como article e section e até do body. Exemplos de conteúdo de um <footer> são informações de autor e links relacionados.
+
+<h1>-<h6> = Eles não foram criados na versão 5 do HTML e nem são específicos para semântica, mas servem para esse propósito. São utilizados para marcar a importância dos títulos, sendo <h1> o mais importante e <h6> o menos. Uma dica: use apenas um <h1> por página, pois ele representa o objetivo da sua página.
+
+3. Principais elementos HTML
+
+3.1 Textos e links
+
+<h1>Título da página</h1>
+
+<h2>Título da seção</h2>
+
+<h3>Título de artigo</h3>
+
+<p>Conteúdo do artigo</p> = p siginifica parágrafo, mas não comporta somente texto, pode-se adiciona imagens, código, etc.
+
+<a>Link</a> = a significa âncora e cria hyperlinks nas páginas web, arquivos, endereços de emails, URLs, etc.
+
+<a href="linkedin.com/in/vilaboim">Linkedin</a> = href é um hyperlink para onde a âncora está apontando.
+<a href="mailto:lucas@vilaboim.com">Email</a> = o href está apontando para um email, por exemplo.
+<a target="_blank">Link</a> = o target serve para nos indicar como esse nosso link será aberto, no caso blank = nova tab.
+
+3.2 Imagens
+
+Para representar imagens em HTML, usamos o elemento img.
+
+<img>
+
+<img src="img/avatar.jpg"> src = significa source e ele guarda o caminho da imagem
+
+<img alt="Foto de Lucas Vilaboim"> alt = mostra a descrição da imagem quando ela não é carregada e leitores de tela usam essa descrição para mostrar aos usuários o que essa imagem significa.
+
+3.3 Listas
+
+<ul> = Faz uma lista onde a ordem dos itens não é importante.
+Item 1
+Item 2
+
+<ol> = Faz uma lista onde a ordem dos itens é importante. Pode ser rempresentado por números, letras ou algarismos romanos
+1. Item 1
+2. Item 3
+
+<li> = o item dentro dessa lista. 
+
+
+------------------------------Introdução a CSS 3-------------------------------------------------------------------------
+
+1. O que são seletores
+
+2. Conceitos Básicos
+
+3. Principais seletores CSS
+
+Definição: A linguagem de estilo conhecida como CSS foi criada em 1996.
+Sua sintaxe é bem simples e pode ser resumida em uma frase: "Você cria regras de estilo para elementos ou grupos de elementos".
+Uma regra do CSS é formada por um seletor ou um grupo de seletores, que são apenas elementos HTML.
+Dentro de um par de chaves {} temos as declarações. Uma declaração é formada por uma propriedade e um valor.
+
+
+------------ID x Classe----------
+
+<header id="header" class="header"></header>
+
+<header class="header"></header>
+
+No CSS, uma classe é precedida por um ponto (.) e um id é precedido por um hash (#)
+
+Ex: .header {
+    padding: 10px;
+}
+
+#header {
+    padding: 15px;
+}
+
+Um id só pode ser usado UMA VEZ na página!
+
+<link rel="stylesheet"> = O atributo rel vem de relationship serve para você dizer qual o relacionamento do arquivo que você quer utilizar com o arquivo atual. Quando você coloca rel="stylesheet" , você está dizendo que o arquivo importado é o arquivo responsável pelo estilo da sua página.
